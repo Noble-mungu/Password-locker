@@ -127,6 +127,23 @@ def main():
                             print(' ')
                             print("You don't seem to have any credentials saved yet")
                             print(' ')
+                         elif short_code == 'copy':
+                        print(' ')
+                        chosen_site = input('Enter the site name for the credential password to copy: ')
+                        copy_credential(chosen_site)
+                        print('')
+                    else:
+                        print('Oops! Wrong option entered. Try again.')
+
+            else: 
+                print(' ')
+                print('Oops! Wrong details entered. Try again or Create an Account.')       
+        
+        else:
+            print("-"*60)
+            print(' ')
+            print('Oops! Wrong option entered. Try again.')
+                
 
 
 
