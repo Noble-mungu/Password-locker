@@ -55,13 +55,13 @@ def copy_credential(site_name):
     return Credential.copy_credential(site_name)
 
 def main():
-    print('')
-    print('Hello!Welcome to Password locker.')
+    print(' ')
+    print('Hello! Welcome to Password Locker.')
     while True:
         print(' ')
-        print('-'*60)
-        print('Use these codes to navigate:\n ca-Create an account \n lg-login \n ex-Exit')
-        short_code = input('Enter a choice:').lower().strip()
+        print("-"*60)
+        print('Use these codes to navigate: \n ca-Create an Account \n lg-Log In \n ex-Exit')
+        short_code = input('Enter a choice: ').lower().strip()
         if short_code == 'ex':
             break
 
@@ -74,8 +74,8 @@ def main():
             password = input('Enter your password - ').strip()
             save_user(create_user(first_name,last_name,password))
             print(" ")
-            print(f'New Account Created for : {first_name}{last_name} using password:{password}')
-         elif short_code == 'lg':
+            print(f'New Account Created for: {first_name} {last_name} using password: {password}')
+        elif short_code == 'lg':
             print("-"*60)
             print(' ')
             print('To login, enter your account details:')
@@ -100,10 +100,16 @@ def main():
                         print('Enter your credential details:')
                         site_name = input('Enter the site\'s name- ').strip()
                         account_name = input('Enter your account\'s name - ').strip()
-                        if psw_choice == 'ep':
-                            print(" ")
-                                password = input('Enter your password').strip()
-                                  break
+                        while True:
+                            print(' ')
+                            print("-"*60)
+                            print('Please choose an option for entering a password: \n ep-enter existing password \n gp-generate a password \n ex-exit')
+                            psw_choice = input('Enter an option: ').lower().strip()
+                            print("-"*60)
+                            if psw_choice == 'ep':
+                                print(" ")
+                                password = input('Enter your password: ').strip()
+                                break
                             elif psw_choice == 'gp':
                                 password = generate_password()
                                 break
@@ -127,7 +133,7 @@ def main():
                             print(' ')
                             print("You don't seem to have any credentials saved yet")
                             print(' ')
-                         elif short_code == 'copy':
+                    elif short_code == 'copy':
                         print(' ')
                         chosen_site = input('Enter the site name for the credential password to copy: ')
                         copy_credential(chosen_site)
@@ -147,21 +153,5 @@ def main():
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 if __name__ == '__main__':
     main()
-
