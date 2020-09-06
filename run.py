@@ -53,3 +53,18 @@ def copy_credential(site_name):
     Function to copy a credentials details to the clipboard
     '''
     return Credential.copy_credential(site_name)
+
+def main():
+	print('')
+	print('Hello!Welcome to Password locker.')
+	while True:
+		print(' ')
+		print('-'*60)
+		print('Use these codes to navigate:\n ca-Create an account \n lg-login \n ex-Exit')
+		short_code = input('Enter a choice').lower().strip()
+		if short_code == 'ex':
+			break
+
+if __name__ == '__main__':
+	main()
+
