@@ -61,9 +61,37 @@ def main():
 		print(' ')
 		print('-'*60)
 		print('Use these codes to navigate:\n ca-Create an account \n lg-login \n ex-Exit')
-		short_code = input('Enter a choice').lower().strip()
+		short_code = input('Enter a choice:').lower().strip()
 		if short_code == 'ex':
 			break
+
+		elif short_code == 'ca':
+			print("-"*60)
+			print(' ')
+			print('To create a new account:')
+			first_name = input('Enter your first name - ').strip()
+			last_name = input('Enter your last name - ').strip()
+			password = input('Enter your password - ').strip()
+			save_user(create_user(first_name,last_name,password))
+			print(" ")
+			print(f'New Account Created for : {first_name}{last_name} using password:{password}')
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 if __name__ == '__main__':
 	main()
